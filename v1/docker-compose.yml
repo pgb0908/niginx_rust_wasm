@@ -1,0 +1,22 @@
+services:
+  gateway:
+    build:
+      context: ..
+      dockerfile: v1/gateway/Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - users
+      - orders
+
+  users:
+    build:
+      context: ./upstreams
+    environment:
+      SERVICE_NAME: users
+
+  orders:
+    build:
+      context: ./upstreams
+    environment:
+      SERVICE_NAME: orders
