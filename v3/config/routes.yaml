@@ -1,0 +1,25 @@
+routes:
+  - match: /users/
+    service: users
+    tenant_selector: any
+    plugins:
+      - auth-filter
+      - header-filter
+      - observe-filter
+    auth:
+      api_key_required: true
+      secret_ref: local/users-api-key
+    fallback:
+      on_plugin_error: deny
+
+  - match: /orders/
+    service: orders
+    tenant_selector: any
+    plugins:
+      - auth-filter
+      - header-filter
+      - observe-filter
+    auth:
+      api_key_required: false
+    fallback:
+      on_plugin_error: allow

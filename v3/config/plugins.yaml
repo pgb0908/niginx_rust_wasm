@@ -1,0 +1,20 @@
+plugins:
+  chain:
+    - name: auth-filter
+      version: 0.1.0
+      phase: request
+      priority: 100
+      enabled: true
+      on_error: fail-close
+    - name: header-filter
+      version: 0.1.0
+      phase: request
+      priority: 50
+      enabled: true
+      on_error: fail-open
+    - name: observe-filter
+      version: 0.1.0
+      phase: request_and_response
+      priority: 10
+      enabled: true
+      on_error: fail-open

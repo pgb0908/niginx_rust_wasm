@@ -1,0 +1,17 @@
+runtime:
+  gateway_runtime: wasmx-prerelease-0.1.0
+  abi: proxy-wasm-rust-sdk-0.2
+
+compatibility:
+  - plugin: auth-filter
+    supported_runtime:
+      min: wasmx-prerelease-0.1.0
+      max: wasmx-prerelease-0.1.x
+  - plugin: header-filter
+    supported_runtime:
+      min: wasmx-prerelease-0.1.0
+      max: wasmx-prerelease-0.1.x
+  - plugin: observe-filter
+    supported_runtime:
+      min: wasmx-prerelease-0.1.0
+      max: wasmx-prerelease-0.1.x

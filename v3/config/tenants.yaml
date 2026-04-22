@@ -1,0 +1,20 @@
+tenants:
+  - id: team-a
+    organization: commerce
+    plugins:
+      auth-filter:
+        enabled: true
+      header-filter:
+        enabled: true
+      observe-filter:
+        enabled: true
+
+  - id: team-b
+    organization: fulfillment
+    plugins:
+      auth-filter:
+        enabled: false
+      header-filter:
+        enabled: true
+      observe-filter:
+        enabled: true
